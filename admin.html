@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Welcome Admin</title>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="css/thumb.png" />
+
+</head>
+
+<body>
+
+    <div class="con1">
+        <h3>Participants</h3>
+
+        <textarea id="player" rows="10" cols="30"></textarea><br>
+
+        <button id="save" class="save">Save / Overwrite</button>
+        
+        <button id="add" class="add" onclick="set()">Add Participants</button>
+    </div>
+
+    <div class="con2">
+        <h3 align = left>List of Participants</h3>
+<table>
+        <ol align = left >
+
+            <script>
+
+                var playerz = JSON.parse(localStorage["players"]);
+                
+                
+                for (i = 0; i < playerz.length; i++) {
+                    if(playerz[i] !== ""){
+                        document.write("<li>" + playerz[i] + "</li>");    
+                    }
+                }
+            
+            </script>
+
+        </ol>
+</table>
+    </div>
+
+<script type="text/javascript" src="js/save.js"></script>   
+</body>
+
+</html>
